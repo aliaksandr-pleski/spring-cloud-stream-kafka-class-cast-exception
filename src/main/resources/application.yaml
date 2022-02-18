@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition: supplier;streamFunction;function;consumer1;consumer2;consumer3
+      kafka:
+        binder:
+          producer-properties:
+            key.serializer: org.apache.kafka.common.serialization.StringSerializer
+          consumer-properties:
+            key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      bindings:
+        supplier-out-0:
+          binder: kafka
+          destination: scs-cc-supplier
+        streamFunction-in-0:
+          destination: scs-cc-supplier
+        streamFunction-out-0:
+          destination: scs-cc-streamFunction
+        function-in-0:
+          binder: kafka
+          destination: scs-cc-streamFunction
+        function-out-0:
+          binder: kafka
+          destination: scs-cc-consumer
+        consumer1-in-0:
+          destination: scs-cc-consumer
+        consumer2-in-0:
+          destination: scs-cc-consumer
+        consumer3-in-0:
+          binder: kafka
+          destination: scs-cc-consumer
