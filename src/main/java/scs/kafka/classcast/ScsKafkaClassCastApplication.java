@@ -52,7 +52,7 @@ public class ScsKafkaClassCastApplication {
 
     @Bean
     public Consumer<KStream<String, ClassC>> consumer1() {
-        return stream -> stream.peek((k, v) -> log.info("No class cast: {}, {}", k, v));
+        return stream -> stream.peek((k, v) -> log.info("No class cast - consumer1: {}, {}", k, v));
     }
 
     @Bean

@@ -1,5 +1,11 @@
 # spring-cloud-stream-kafka-class-cast-exception
 
+### Update
+
+This can be fixed using approaches described in this
+ticket: https://github.com/spring-cloud/spring-cloud-stream-binder-kafka/issues/1201
+---
+
 Potentially bug in spring-cloud-stream kafka/kafka-streams binder
 
 This is a `spring-cloud-stream` application. Spring Boot is 2.6.2 and Spring Cloud is 2021.0.0.
